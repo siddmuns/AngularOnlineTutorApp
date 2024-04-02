@@ -11,6 +11,7 @@ import {NgClass} from "@angular/common";
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  //Variables that hold the value
   studentName = "Munsif Siddiqui";
   studentId = 991680159;
 }

@@ -1,11 +1,13 @@
+<!--Munsif Siddiqui-->
+<!--991680159-->
+
 <ul *ngFor="let problem of problems; let i = index">
   <label>Problem {{i}}:</label> <br>
   <label>{{ problem.a }} {{ problem.operation }} {{ problem.b }} = ? </label> <br>
-  <input type="number"
-         [(ngModel)]="problem.userAnswer"> <br>
+  <input type="number" [(ngModel)]="problem.userAnswer"> <br>
   <label>Answer: </label> <br>
 
-  <p *ngIf="answerSubmitted"
+  <p *ngIf="showAnswerStatus"
         [ngStyle]="{'color': (problem.userAnswer === problem.answer ? 'green' : 'red')}">
     {{ problem.userAnswer === problem.answer ? 'Correct answer' : 'Incorrect answer!' }}
   </p>

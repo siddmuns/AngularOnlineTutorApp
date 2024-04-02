@@ -16,22 +16,28 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
+  //Problem Array which holds the set of problems to be displayed
   problems: Problem[] = [];
-  answerSubmitted: boolean = false;
 
+  //Boolean which sees if the user is ready for answer to be displayed
+  showAnswerStatus: boolean = false;
+
+  //COnsteurctor which inizializes the page with problems
   constructor() {
     this.generateProblems();
   }
 
+  //Generate problems variable which actually creates the problems to be displayed
   generateProblems(): void {
     this.problems = [];
     for (let i = 0; i < 4; i++) {
       this.problems.push(new Problem());
     }
-    this.answerSubmitted = false; // Reset the answerSubmitted flag
+    this.showAnswerStatus = false; // Resets the answerSubmitted boolean flag
   }
 
+  //Check answer event which makes it so the answers are displayed
   checkAnswers(): void {
-    this.answerSubmitted = true; // Set the flag to true to show answer statuses
+    this.showAnswerStatus = true; // Set the flag to true to show answer statuses
   }
 }
