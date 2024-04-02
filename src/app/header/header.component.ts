@@ -17,5 +17,5 @@ export class HeaderComponent {
     return new Date().toLocaleDateString();
   }
 
-  quote = "Tough Times Don't Last, Tough People Do"
+  quote = "Tough Times Don't Last, Tough People Do";
 }

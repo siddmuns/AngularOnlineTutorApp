@@ -1,1 +1,18 @@
-<p>content works!</p>
+<ul *ngFor="let problem of problems; let i = index">
+  <label>Problem {{i}}:</label> <br>
+  <label>{{ problem.a }} {{ problem.operation }} {{ problem.b }} = ? </label> <br>
+  <input type="number"
+         [(ngModel)]="problem.userAnswer"> <br>
+  <label>Answer: </label> <br>
+
+  <p *ngIf="answerSubmitted"
+        [ngStyle]="{'color': (problem.userAnswer === problem.answer ? 'green' : 'red')}">
+    {{ problem.userAnswer === problem.answer ? 'Correct answer' : 'Incorrect answer!' }}
+  </p>
+</ul>
+
+<button (click)="checkAnswers()">Check Answers</button>
+<button (click)="generateProblems()">Generate New Problems</button>
+
+<hr>
+
